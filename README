@@ -1,6 +1,11 @@
 POE-Component-IRC-Plugin-WWW-GetPageTitle
 
-
+This module is a L<POE::Component::IRC> plugin which uses
+L<POE::Component::IRC::Plugin> for its base. It provides interface to
+to fetch titles of the URIs that are either given to the bot directly or (upon configuration)
+simply appear in the channel.
+It accepts input from public channel events, C</notice> messages as well
+as C</msg> (private messages); although that can be configured at will.
 
 INSTALLATION
 

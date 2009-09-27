@@ -1,5 +1,8 @@
 Revision history for POE-Component-IRC-Plugin-WWW-GetPageTitle
 
+0.0102  September 27, 2009
+        Fixed a major bug that allowed to execute any IRC command
+
 0.0101  October 12, 2008
         First version, released on an unsuspecting world.
 

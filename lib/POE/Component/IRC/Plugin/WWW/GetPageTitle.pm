@@ -3,7 +3,7 @@ package POE::Component::IRC::Plugin::WWW::GetPageTitle;
 use warnings;
 use strict;
 
-our $VERSION = '0.0101';
+our $VERSION = '0.0102';
 
 use base 'POE::Component::IRC::Plugin::BasePoCoWrap';
 use POE::Component::WWW::GetPageTitle;
@@ -27,6 +27,9 @@ sub _make_poco {
 sub _make_response_message {
     my $self   = shift;
     my $in_ref = shift;
+    defined $in_ref->{title}
+        and $in_ref->{title} =~ s/\s/ /g;
+
     return [
         exists $in_ref->{error}
         ? $in_ref->{error}
@@ -384,7 +387,8 @@ The possible keys/values of that hashrefs are as follows:
 
 The C<title> key will contain the "authority" section of the original URI and the title
 of the page, this is what the plugin reports to the channel/person when C<auto> argument
-is turned on.
+is turned on. B<Note:> anything in the title of that page that matches C<\s> will be replaced
+by a space character.
 
 =head3 C<who>
 
