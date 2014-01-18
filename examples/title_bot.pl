@@ -8,11 +8,12 @@ use lib qw(lib ../lib);
 use POE qw(Component::IRC  Component::IRC::Plugin::WWW::GetPageTitle);
 
 my $irc = POE::Component::IRC->spawn(
-    nick        => 'TitleBot',
+    nick        => 'TitleBot222',
     server      => 'irc.freenode.net',
     port        => 6667,
-    ircname     => 'TitleBot',
+    ircname     => 'TitleBot222',
     plugin_debug => 1,
+    debug       => 1,
 );
 
 POE::Session->create(

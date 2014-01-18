@@ -3,7 +3,7 @@ package POE::Component::IRC::Plugin::WWW::GetPageTitle;
 use warnings;
 use strict;
 
-our $VERSION = '0.0102';
+our $VERSION = '1.0103';
 
 use base 'POE::Component::IRC::Plugin::BasePoCoWrap';
 use POE::Component::WWW::GetPageTitle;
@@ -102,6 +102,8 @@ sub _uri_callback {
 
 1;
 __END__
+
+=encoding utf8
 
 =head1 NAME
 

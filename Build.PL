@@ -15,9 +15,13 @@ my $builder = Module::Build->new(
         'POE::Component::WWW::GetPageTitle'         => 0.0101,
         'URI::Find::Schemeless'                     => 1.8,
         'URI'                                       => 1.35,
+        'perl' => '5.006',
     },
+    configure_requires => { 'Module::Build' => 0 },
     add_to_cleanup      => [ 'POE-Component-IRC-Plugin-WWW-GetPageTitle-*' ],
     create_makefile_pl => 'traditional',
 );
-
+if ( $ENV{RELEASE_TESTING} ) {
+    system('pod2text lib/POE/Component/IRC/Plugin/WWW/GetPageTitle.pm > README');
+}
 $builder->create_build_script();
